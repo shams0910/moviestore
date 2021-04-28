@@ -1,0 +1,24 @@
+
+"""
+--- Scraping description ---
+
+
+--- Naming Convention and Code style ---
+
+- Content of the file consists of following parts:
+	- imports 
+	- connecting to db
+	- resource functions
+	- scraping code 
+- Each variable of bs4 object should be named in following ways: logicalname_tagname, classname_tagname.
+- Before searching for specific information, the name of the info should be writen 
+  in the block-comment above the code part. Example below:
+	
+	# id
+	imdb_title_link_a = title_column.a
+	title_instance["_id"] = imdb_title_link_a['href'].split('/')[2]
+ 
+ - Before opening new page for scrapping, docstring-comment should placed describing the main content
+
+"""
+
