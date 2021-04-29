@@ -1,11 +1,11 @@
 version: "3.7"
 services:
-  # backend:
-  #   build: ./backend
-  #   ports:
-  #     - 5000:5000
-  #   env_file:
-  #     - ./env/mongo.env
+  backend:
+    build: ./backend
+    ports:
+      - 80:80
+    env_file:
+      - ./env/mongo.env
   redis:
     image: redis
   celery-worker:
@@ -15,8 +15,6 @@ services:
       - redis
     env_file:
       - ./env/mongo.env
-    # volumes:
-    #   - ./services:/code
   celery-beat:
     build: ./services
     command: celery -A tasks beat -l info
@@ -24,5 +22,3 @@ services:
       - redis
     env_file:
       - ./env/mongo.env
-    # volumes:
-    #   - ./services:/code
